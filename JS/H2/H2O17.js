@@ -35,5 +35,5 @@ function draw() {
   fill('cornsilk');
   rect(0,410,450,40);
   fill('black');
-  text("Het object kever bevindt zich in het punt x = 100 en y = 150",5,435);
+  text("Het object kever bevindt zich in het punt x = "x.positie" en y = "y.positie"",5,435);
 }
