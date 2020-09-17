@@ -1,7 +1,8 @@
 var speed = 5;
+var afstand;
 var bol = {
-    X: 225,
-    Y: 225,
+    X: 250,
+    Y: 250,
     D: 50,
 
 
@@ -23,53 +24,43 @@ var bol = {
         this.Y = constrain(this.Y, this.D / 2, canvas.width - this.D / 2);
     },
     teken() {
-        fill('blue');
+        fill('brown');
         noStroke();
+        ellipse(this.X, this.Y, this.D, 100);
+    }
+}
+
+var eiland = {
+    X: 500,
+    Y: 0,
+    D: 200,
+    geraakt(bol) {
+        afstand=dist(this.X, this.Y, bol.X, bol.Y);
+        if (afstand <= (this.D + bol.D)/2){
+            fill('yellow');
+        }
+        else {
+            fill ('green')
+        }
+    }
+    ,teken() {
+
         ellipse(this.X, this.Y, this.D);
     }
 }
-var bol2 = {
-    X: 225,
-    Y: 225,
-    D: 50,
 
-
-
-    beweeg() {
-        if (keyIsDown(65)) {
-            this.X -= speed;
-        }
-        if (keyIsDown(68)) {
-            this.X += speed;
-        }
-        if (keyIsDown(87)) {
-            this.Y -= speed;
-        }
-
-        if (keyIsDown(83)) {
-            this.Y += speed;
-        }
-        this.X = constrain(this.X, this.D / 2, canvas.width - this.D / 2);
-        this.Y = constrain(this.Y, this.D / 2, canvas.width - this.D / 2);
-    },
-    teken() {
-        fill('red');
-        noStroke();
-        ellipse(this.X, this.Y, 50, 50);
-    }
-}
 
 function setup() {
-    canvas = createCanvas(1000, 1000);
+    canvas = createCanvas(500, 500);
     canvas.parent('processing');
 
 }
 function draw() {
-    background('silver');
+    background('blue');
     bol.beweeg();
     bol.teken();
-    bol2.beweeg();
-    bol2.teken();
+    eiland.geraakt(bol);
+    eiland.teken();
 
 }
 
