@@ -102,6 +102,7 @@ function draw() {
   raster.teken();
   jos.beweeg();
   jos.toon();
+  alice.beweeg();
   alice.toon();
 
   if (jos.wordtGeraakt(alice)) {

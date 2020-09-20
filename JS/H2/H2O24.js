@@ -1,12 +1,14 @@
+
 var dobbelSteen = {
   x: 25,
   y: 25,
-  grootte: 400,
+  grootte: 200,
   ogen: null,
-  diameterOgen: 50,
+  diameterOgen: 100,
   R: null,
   G: null,
   B: null,
+  totaal: 0,
   
   gooi() {
     this.ogen = floor(random(0,6)) + 1;
@@ -20,9 +22,10 @@ var dobbelSteen = {
     fill(this.R,this.G,this.B);
     rect(this.x,this.y,this.grootte,this.grootte);
 
+
     // hieronder volgt code om de stippen op de juiste plek te krijgen
     
-    fill('white');    
+    fill('black');    
     if (this.ogen!=1) {ellipse(this.x+this.grootte/6*1,this.y+this.grootte/6*1,this.diameterOgen,this.diameterOgen);}
     if (this.ogen==6) {ellipse(this.x+this.grootte/6*3,this.y+this.grootte/6*1,this.diameterOgen,this.diameterOgen);}
     if (this.ogen>3) {ellipse(this.x+this.grootte/6*5,this.y+this.grootte/6*1,this.diameterOgen,this.diameterOgen);}
@@ -43,12 +46,15 @@ function setup() {
   textSize(80);  
   frameRate(10);
   dobbelSteen.gooi();
+  textSize(20);
 }
 
 function draw() {
   background('lightcyan');
   if (mouseIsPressed) {
     dobbelSteen.gooi();
+    dobbelSteen.totaal += 1;
   }
   dobbelSteen.teken();
+  text('aantal worpen = ' + dobbelSteen.totaal, 20, 300);
 }

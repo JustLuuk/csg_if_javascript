@@ -32,10 +32,13 @@ var jos = {
       return false;
     }
   },
+
+  
   
   teken(muisPositieX,muisPositieY) {
     this.x = constrain(muisPositieX,this.diameter / 2,canvas.width - this.diameter / 2);
     this.y = constrain(muisPositieY,this.diameter / 2,canvas.height - this.diameter / 2);
+
 
     push();
     translate(this.x,this.y);
@@ -70,7 +73,12 @@ function draw() {
   background('lavender');
   vuur.teken();
   
-  // voeg hier de if-else in
+if (jos.isVlakbij(vuur)) {
+    jos.kleur = 'red';
+}
+else {
+    jos.kleur = 'salmon';
+}
   
   jos.teken(mouseX,mouseY);
 }

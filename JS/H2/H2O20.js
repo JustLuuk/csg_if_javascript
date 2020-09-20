@@ -1,6 +1,6 @@
 var raster = {
-  aantalRijen: 6,
-  aantalKolommen: 9,
+  aantalRijen: 18,
+  aantalKolommen: 27,
   celGrootte: null,
   
   berekenCelGrootte() {
@@ -75,5 +75,5 @@ function draw() {
   raster.teken();
   jos.beweeg();
   jos.toon();
-  text(jos.animatie[3].width,5,15)
+  //text(jos.animatie[3].width,5,15)
 }
