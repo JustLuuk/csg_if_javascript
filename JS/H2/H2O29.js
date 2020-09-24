@@ -1,3 +1,4 @@
+
 var raster = {
   aantalRijen: 6,
   aantalKolommen: 9,
@@ -26,6 +27,7 @@ var jos = {
   aantalFrames: 6,
   frameNummer: 3,
   stapGrootte: null,
+  gehaald: false,
 
   beweeg() {
     if (keyIsDown(LEFT_ARROW)) {
@@ -44,6 +46,9 @@ var jos = {
       this.y += this.stapGrootte;
       this.frameNummer = 5;
     }
+          if (this.x == canvas.width) {
+          this.gehaald = true;
+      }
     
     this.x = constrain(this.x,0,canvas.width-raster.celGrootte);
     this.y = constrain(this.y,0,canvas.height-raster.celGrootte);
@@ -57,6 +62,8 @@ var jos = {
       return false;
     }
   },
+
+
   
   toon() {
     image(this.animatie[this.frameNummer],this.x,this.y,raster.celGrootte,raster.celGrootte);
@@ -74,7 +81,7 @@ var alice = {
     this.x += floor(random(-1,2))*this.stapGrootte;
     this.y += floor(random(-1,2))*this.stapGrootte;
 
-    this.x = constrain(this.x,0,canvas.width - raster.celGrootte);
+    this.x = constrain(this.x,0,canvas.width - raster.celGrootte+1);
     this.y = constrain(this.y,0,canvas.height - raster.celGrootte);
   },
   
@@ -92,6 +99,7 @@ function preload() {
     jos.animatie.push(frameJos);
   }
 }
+
 
 function setup() {
   canvas = createCanvas(900,600);
@@ -112,4 +120,9 @@ function draw() {
   if (jos.wordtGeraakt(alice)) {
     noLoop();
   }
+if (jos.gehaald){
+background('green')
+alert('goedzo, mvg je FBI agent');
+}
+ 
 }
