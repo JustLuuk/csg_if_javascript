@@ -4,7 +4,7 @@ var dobbelSteen = {
   y: 25,
   grootte: 200,
   ogen: null,
-  diameterOgen: 100,
+  diameterOgen: 3,
   R: null,
   G: null,
   B: null,
