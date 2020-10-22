@@ -6,7 +6,9 @@ class Doel {
         this.geraakt = 0;
         this.wordtGeraakt = false;
         this.schaal = 7;
+        this.stap = 3;
         this.bepaalDiameter();
+        this.beweeg();
     }
 
     bepaalDiameter() {
@@ -24,7 +26,16 @@ class Doel {
             return true;
         }
     }
-
+    beweeg() {
+    if (keyIsDown(UP_ARROW))
+    {
+      this.y -= this.stap;
+    }
+    if (keyIsDown(DOWN_ARROW))
+    {
+      this.y += this.stap;
+    } 
+}
     teken() {
         push();
         fill(this.kleur);

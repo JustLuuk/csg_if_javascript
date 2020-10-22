@@ -125,7 +125,7 @@ class Jumper {
     constructor() {
     this.speler = new Speler(null,null);
     this.level = 0;
-    this.maxLevel = 5;
+    this.maxLevel = 6;
     this.Nplatforms = null;
     this.platforms = null;
     this.actief = null;

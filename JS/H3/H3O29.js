@@ -10,7 +10,7 @@
    var gameSettings = [5,10,15,50,75];   
 */
 
-var gameSettings = [5,10,15,50,75];
+var gameSettings = [1,10,1000,50,75];
 
 /*  **********************************************************
     **                BEGIN klasse Speler                   **
@@ -45,7 +45,7 @@ class Speler {
       appel.y = canvas.height + appel.d;
       this.niveau++;
       if (this.niveau % this.aantalVoorExtraLeven == 0) {
-          this.score++;
+          this.score ++;
       }
       appel.x = -1000; 
       appel.y = height / 2;
