@@ -1,6 +1,6 @@
 function preload() {
     achtergrondmuziek = loadSound("sounds/bensound-groovyhiphop.mp3");
-    startscherm = loadImage("images/background/startscreen.png");
+    startscherm = loadImage("images/startscreen.png");
 }
 
 function windowResized() {
@@ -10,11 +10,12 @@ function windowResized() {
 function setup() {
     createCanvas(windowWidth, windowHeight);
     colorMode(RGB,255,255,255,1);
+    background(startscherm);
     textFont("Monospace");
     textSize(44);
     textAlign(CENTER,CENTER);  
     frameRate(50);
-    spel = new Spacers();
+    spel = new SpaceTravel();
     spel.nieuwSpel();
 }
 

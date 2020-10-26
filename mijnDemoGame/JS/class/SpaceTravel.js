@@ -1,9 +1,9 @@
 /*  **********************************************************
-    **                 BEGIN klasse Spacers                 **
+    **                 BEGIN klasse SpaceTravel             **
     ********************************************************** */
 
 
-class Spacers {
+class SpaceTravel {
     constructor() {
     this.level = null;
     this.maxLevel = 5;
@@ -70,7 +70,7 @@ class Spacers {
     var marge = 100;
     rect(marge,marge,canvas.width - 2 * marge,canvas.height - 2 * marge);
     fill(255);
-    text(" Dit is Level "+this.level,marge,marge,canvas.width - 2 * marge,canvas.height - 2 * marge);   
+    text("Level "+this.level,marge,marge,canvas.width - 2 * marge,canvas.height - 2 * marge);   
     pop();
   }
   
@@ -80,7 +80,7 @@ class Spacers {
     stroke(150,200,255,.7);
     strokeWeight(5);
     textSize(140);
-    text(" sPaCeRs",0,0,canvas.width,canvas.height * 2 / 3);
+    text("SpaveTravel",0,0,canvas.width,canvas.height * 2 / 3);
     textSize(32);
     strokeWeight(2);
     fill(0,0,0,0.75);
@@ -95,7 +95,7 @@ class Spacers {
     strokeWeight(3);
     text('Gefeliciteerd!\nJe hebt level '+this.level+' gehaald!\n\nDruk ENTER om naar level '+(this.level+1)+' te gaan.',0,0,canvas.width,canvas.height / 2);
     pop();
-  }   
+  }
 
   eindScherm() {
     var tekst = 'Het spel is afgelopen.';
@@ -114,7 +114,7 @@ class Spacers {
   }    
   
   teken() {
-    background('navy');
+    background(startscherm);
     if (!this.actief) {
         if (this.afgelopen) {
             this.eindScherm();
@@ -136,5 +136,5 @@ class Spacers {
 }
 
 /*  **********************************************************
-    **                 EINDE klasse Spacers                 **
+    **                 EINDE klasse SpaceTravel             **
     ********************************************************** */
