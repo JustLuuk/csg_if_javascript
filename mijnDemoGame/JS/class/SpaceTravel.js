@@ -68,7 +68,6 @@ class SpaceTravel {
     noStroke();
     textSize(30);
     var marge = 100;
-    rect(marge,marge,canvas.width - 2 * marge,canvas.height - 2 * marge);
     fill(255);
     text("Level "+this.level,marge,marge,canvas.width - 2 * marge,canvas.height - 2 * marge);   
     pop();
@@ -80,7 +79,7 @@ class SpaceTravel {
     stroke(150,200,255,.7);
     strokeWeight(5);
     textSize(140);
-    text("SpaveTravel",0,0,canvas.width,canvas.height * 2 / 3);
+    text("SpaceTravel",0,0,canvas.width,canvas.height * 2 / 3);
     textSize(32);
     strokeWeight(2);
     fill(0,0,0,0.75);
