@@ -7,7 +7,7 @@ class Hero {
     constructor(l) {
         this.x = 100;
         this.y = random(100, canvas.height - 100);
-        this.d = 100;
+        this.d = 75;
         this.v = 3 + l;
     }
 
@@ -33,8 +33,7 @@ class Hero {
         push();
         noStroke();
         imageMode(CENTER)
-        image(raket, this.x, this.y, this.d, this.d - 20);
-
+        image(raket, this.x, this.y, this.d + 25, this.d);
         pop();
     }
 

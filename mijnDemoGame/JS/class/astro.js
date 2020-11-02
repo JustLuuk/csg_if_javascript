@@ -5,7 +5,7 @@
 
 class Vijand {
   constructor(l) {
-      this.x = canvas.width - 100;
+      this.x = canvas.width;
       this.y = random(100,canvas.height - 100);
       this.d = 50;
       this.v = 3 + random (3*l);
@@ -29,7 +29,7 @@ class Vijand {
       push();
       noStroke();
       fill(this.kleur);
-      ellipse(this.x,this.y,this.d);
+      ellipse(this.x,this.y,this.d + 10);
       pop();
   }
 }
