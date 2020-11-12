@@ -29,9 +29,11 @@ class SpaceTravel {
     this.levelGehaald = false;
     this.speler = new Hero(this.level);
     this.vijanden = [];
-    for (var v = 0; v <= this.level*3; v++) {
-        this.vijanden.push(new Vijand(this.level));
+    for (var v = 0; v <= this.level*2; v++) {
+        this.vijanden.push(new Vijand1(this.level));
+        this.vijanden.push(new Vijand2(this.level));
     }
+ 
   }
 
   update() {
@@ -83,7 +85,7 @@ class SpaceTravel {
     textSize(32);
     strokeWeight(2);
     fill(0,0,0,0.75);
-    text("Nu is het een echt spel. Haal de overkant. Ontwijk de vijand.\n\nDruk op een toets om te beginnen.\n",0,canvas.height * 1 / 2,canvas.width,canvas.height * 1 / 3);
+    text("Nu is het een echt spel. Haal de overkant. Ontwijk de vijand.\n\nDruk op een toets om te beginnen.\n\n je beweegd met behulp van de pijltjes toetsen.\n",0,canvas.height * 1 / 2,canvas.width,canvas.height * 1 / 3);
     pop();
   }
 
@@ -100,6 +102,7 @@ class SpaceTravel {
     var tekst = 'Het spel is afgelopen.';
     if (this.gewonnen) {
       tekst = 'Gefeliciteerd!';
+   
     }
     else {
         tekst += '\nHelaas: je bent af.';

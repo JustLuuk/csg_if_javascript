@@ -2,6 +2,8 @@ function preload() {
     achtergrondmuziek = loadSound("sounds/bensound-groovyhiphop.mp3");
     startscherm = loadImage("images/startscreen.png");
     raket = loadImage("images/raket.png");
+    astro1 = loadImage("images/astro1.png");
+    astro2 = loadImage("images/astro2.png");
 }
 
 function windowResized() {
