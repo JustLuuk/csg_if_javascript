@@ -1,9 +1,17 @@
+var achtergrond;
+
 function preload() {
-    achtergrondmuziek = loadSound("sounds/bensound-groovyhiphop.mp3");
+    achtergrondmuziek = loadSound("sounds/Fade.mp3");
+    boem = loadSound("sounds/explosie.mp3");
+    check = loadSound("sounds/check.mp3");
     startscherm = loadImage("images/startscreen.png");
     raket = loadImage("images/raket.png");
     astro1 = loadImage("images/astro1.png");
     astro2 = loadImage("images/astro2.png");
+    raketLangzaam = loadImage("images/raketLangzaam.png");
+    raketNormaal = loadImage("images/raketNormaal.png");
+    raketSnel = loadImage("images/raketSnel.png");
+    aardemars = loadImage("images/aarde-mars.png");
 }
 
 function windowResized() {
@@ -13,7 +21,7 @@ function windowResized() {
 function setup() {
     createCanvas(windowWidth, windowHeight);
     colorMode(RGB,255,255,255,1);
-    background(startscherm);
+
     textFont("Monospace");
     textSize(44);
     textAlign(CENTER,CENTER);  
@@ -23,6 +31,7 @@ function setup() {
 }
 
 function draw() {
+       background(aardemars);
     if (spel.actief && !spel.levelGehaald) {
         spel.update();
     }
@@ -44,4 +53,4 @@ function keyTyped() {
     achtergrondmuziek.stop();
     spel.nieuwSpel();
   }  
-}
+  }

@@ -1,5 +1,5 @@
 /*  **********************************************************
-    **       BEGIN klasse Hero bij voorbeeld Levels         **
+    **                     Ruimteschip                      **
     ********************************************************** */
 
 
@@ -7,8 +7,9 @@ class Hero {
     constructor(l) {
         this.x = 100;
         this.y = random(100, canvas.height - 100);
-        this.d = 80;
+        this.d = 60;
         this.v = 4;
+        this.raket = raketNormaal;
     }
 
     beweeg() {
@@ -20,9 +21,17 @@ class Hero {
         }
         if (keyIsDown(LEFT_ARROW)) {
             this.x -= this.v - 1;
+            this.raket = raketLangzaam;
+        }
+        else {
+            this.raket = raketNormaal;
         }
         if (keyIsDown(RIGHT_ARROW)) {
             this.x += this.v;
+            this.raket = raketSnel;
+        }
+        else {
+            this.raket = raketNormaal;
         }
         this.x += this.v;
         this.x = constrain(this.x, 0, canvas.width);
@@ -33,12 +42,8 @@ class Hero {
         push();
         noStroke();
         imageMode(CENTER)
-        image(raket, this.x, this.y, this.d + 25, this.d);
+        image(this.raket, this.x + 5, this.y + 5, this.d + 140, this.d + 60);
         pop();
     }
 
 }
-
-/*  **********************************************************
-    **       EINDE klasse Hero bij voorbeeld Levels         **
-    ********************************************************** */
