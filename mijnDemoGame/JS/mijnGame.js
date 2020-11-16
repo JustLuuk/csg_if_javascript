@@ -1,9 +1,5 @@
-var achtergrond;
-
 function preload() {
     achtergrondmuziek = loadSound("sounds/Fade.mp3");
-    boem = loadSound("sounds/explosie.mp3");
-    check = loadSound("sounds/check.mp3");
     startscherm = loadImage("images/startscreen.png");
     raket = loadImage("images/raket.png");
     astro1 = loadImage("images/astro1.png");
@@ -14,6 +10,8 @@ function preload() {
     aardemars = loadImage("images/aarde-mars.png");
 }
 
+//var achtergrond = new array (aardemars, startscherm);
+
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
 }
@@ -21,7 +19,6 @@ function windowResized() {
 function setup() {
     createCanvas(windowWidth, windowHeight);
     colorMode(RGB,255,255,255,1);
-
     textFont("Monospace");
     textSize(44);
     textAlign(CENTER,CENTER);  

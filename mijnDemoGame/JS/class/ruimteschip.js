@@ -8,7 +8,7 @@ class Hero {
         this.x = 100;
         this.y = random(100, canvas.height - 100);
         this.d = 60;
-        this.v = 4;
+        this.v = 4.5;
         this.raket = raketNormaal;
     }
 
@@ -29,9 +29,6 @@ class Hero {
         if (keyIsDown(RIGHT_ARROW)) {
             this.x += this.v;
             this.raket = raketSnel;
-        }
-        else {
-            this.raket = raketNormaal;
         }
         this.x += this.v;
         this.x = constrain(this.x, 0, canvas.width);

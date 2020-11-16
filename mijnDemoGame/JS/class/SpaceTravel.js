@@ -5,6 +5,7 @@
 
 class SpaceTravel {
     constructor() {
+    this.achter = [aardemars, startscherm];
     this.level = null;
     this.maxLevel = 10;
     this.actief = null;
@@ -14,8 +15,6 @@ class SpaceTravel {
     this.speler = null;
     this.vijanden = null;
     this.raak = 0;
-    this.boem = boem;
-    this.check = check;
     this.achtergrond = aardemars;
   }
   
@@ -78,14 +77,6 @@ class SpaceTravel {
     pop();
   }
 
-  /*achtergrond() {
-      if (this.level = 2) {
-      this.achtergrond = startscherm;
-    }
-    else {
-        this.achtergrond = aardemars;
-    }
-  }*/
 
   
   beginScherm() {
@@ -127,16 +118,6 @@ class SpaceTravel {
     text(tekst + '\n\nDruk SPATIE voor nieuw spel.',0,0,canvas.width,canvas.height);
     pop();
   }    
-
-  soundEffects() {
-      if (this.gewonnen) {
-        this.check.play();
-      }
-      else {
-        this.boem.play();
-      }
-      noLoop();
-  }
   
   teken() {
     //background(this.achtergrond);
