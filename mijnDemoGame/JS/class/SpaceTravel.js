@@ -5,7 +5,6 @@
 
 class SpaceTravel {
     constructor() {
-    this.achter = [aardemars, startscherm];
     this.level = null;
     this.maxLevel = 10;
     this.actief = null;
@@ -15,7 +14,6 @@ class SpaceTravel {
     this.speler = null;
     this.vijanden = null;
     this.raak = 0;
-    this.achtergrond = aardemars;
   }
   
   nieuwSpel() {
@@ -109,7 +107,7 @@ class SpaceTravel {
    
     }
     else {
-        tekst += '\nHelaas: je bent af.';
+        tekst += '\nHelaas: je bent af.\n\n Je hebt '+this.level+' golven gehaald';
     }
     push();
     fill(0);
@@ -120,7 +118,6 @@ class SpaceTravel {
   }    
   
   teken() {
-    //background(this.achtergrond);
     if (!this.actief) {
         if (this.afgelopen) {
             this.eindScherm();

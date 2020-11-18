@@ -1,16 +1,26 @@
+var achtergronden = [];
+
 function preload() {
-    achtergrondmuziek = loadSound("sounds/Fade.mp3");
-    startscherm = loadImage("images/startscreen.png");
+    //achtergrondmuziek = loadSound("sounds/Fade.mp3");
     raket = loadImage("images/raket.png");
     astro1 = loadImage("images/astro1.png");
     astro2 = loadImage("images/astro2.png");
     raketLangzaam = loadImage("images/raketLangzaam.png");
     raketNormaal = loadImage("images/raketNormaal.png");
     raketSnel = loadImage("images/raketSnel.png");
-    aardemars = loadImage("images/aarde-mars.png");
+    // Achtergonden op volghorde     
+    achtergronden.push(loadImage("images/aarde-mars.png"));
+    achtergronden.push(loadImage("images/aarde-mars.png"));
+    achtergronden.push(loadImage("images/startscreen.png"));
+    achtergronden.push(loadImage("images/aarde-mars.png"));
+    achtergronden.push(loadImage("images/startscreen.png"));
+    achtergronden.push(loadImage("images/aarde-mars.png"));
+    achtergronden.push(loadImage("images/aarde-mars.png"));
+    achtergronden.push(loadImage("images/aarde-mars.png"));
+    achtergronden.push(loadImage("images/aarde-mars.png"));
+    achtergronden.push(loadImage("images/aarde-mars.png"));
+    achtergronden.push(loadImage("images/aarde-mars.png"));
 }
-
-//var achtergrond = new array (aardemars, startscherm);
 
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
@@ -28,7 +38,7 @@ function setup() {
 }
 
 function draw() {
-       background(aardemars);
+    background(achtergronden[spel.level]);
     if (spel.actief && !spel.levelGehaald) {
         spel.update();
     }
@@ -39,7 +49,7 @@ function keyTyped() {
   if (!spel.actief && !spel.levelGehaald) {
     // begin spel
     spel.actief = true;
-    achtergrondmuziek.loop();
+    //achtergrondmuziek.loop();
   }
   if ((spel.levelGehaald && !spel.afgelopen) && keyCode == ENTER) {
     // level gehaald tijdens het spel
@@ -47,7 +57,7 @@ function keyTyped() {
   }
   if ((spel.afgelopen) && keyCode == 32) {
     // einde spel => 32 = ENTER 
-    achtergrondmuziek.stop();
+    //achtergrondmuziek.stop();
     spel.nieuwSpel();
   }  
   }
