@@ -107,7 +107,7 @@ class SpaceTravel {
    
     }
     else {
-        tekst += '\nHelaas: je bent af.\n\n Je hebt '+this.level+' golven gehaald';
+        tekst += '\nHelaas: je bent af.\n\n Je hebt '+this.level+' golven gespeeld';
     }
     push();
     fill(0);

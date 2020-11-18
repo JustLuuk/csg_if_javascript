@@ -10,16 +10,16 @@ function preload() {
     raketSnel = loadImage("images/raketSnel.png");
     // Achtergonden op volghorde     
     achtergronden.push(loadImage("images/aarde-mars.png"));
-    achtergronden.push(loadImage("images/aarde-mars.png"));
-    achtergronden.push(loadImage("images/startscreen.png"));
-    achtergronden.push(loadImage("images/aarde-mars.png"));
-    achtergronden.push(loadImage("images/startscreen.png"));
-    achtergronden.push(loadImage("images/aarde-mars.png"));
-    achtergronden.push(loadImage("images/aarde-mars.png"));
-    achtergronden.push(loadImage("images/aarde-mars.png"));
-    achtergronden.push(loadImage("images/aarde-mars.png"));
-    achtergronden.push(loadImage("images/aarde-mars.png"));
-    achtergronden.push(loadImage("images/aarde-mars.png"));
+    achtergronden.push(loadImage("images/aarde-mars.png"));//zon
+    achtergronden.push(loadImage("images/aarde-mars.png"));//mercury
+    achtergronden.push(loadImage("images/aarde-mars.png"));//venus
+    achtergronden.push(loadImage("images/aarde-mars.png"));//aarde mars
+    achtergronden.push(loadImage("images/aarde-mars.png"));//jupiter
+    achtergronden.push(loadImage("images/saturnus.png"));//saturnes
+    achtergronden.push(loadImage("images/uranus.png"));//uranus
+    achtergronden.push(loadImage("images/Neptunes.png"));//neptunes
+    achtergronden.push(loadImage("images/aarde-mars.png"));//zwart gat
+    achtergronden.push(loadImage("images/aarde-mars.png"));//melkweg
 }
 
 function windowResized() {
